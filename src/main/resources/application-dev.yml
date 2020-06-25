@@ -1,0 +1,22 @@
+## use create when running the app for the first time
+## then change to "update" which just updates the schema when necessary
+
+# create and drop tables and sequences, loads import.sql
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    ## this shows the sql actions in the terminal logs
+    show-sql: true
+
+  # Oracle settings
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: sys as sysdba
+    password: 55555
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+
+##optional, but just in case another application is listening on your default  port (8080)
+server:
+  port: 7000
+
