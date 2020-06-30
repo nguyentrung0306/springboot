@@ -19,4 +19,8 @@ public class UserService {
     public User addUser(User user) {
         return this.userDao.save(user);
     }
+
+    public void deleteUserById(Integer id) {
+        this.userDao.deleteById(id);
+    }
 }
