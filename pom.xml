@@ -31,6 +31,12 @@
 	</repositories>
 
 	<dependencies>
+		<!-- SQL Server - Mssql-Jdbc driver -->
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<!--swagger-->
 		<dependency>
 			<groupId>io.springfox</groupId>
