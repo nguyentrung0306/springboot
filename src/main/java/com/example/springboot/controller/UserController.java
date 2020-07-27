@@ -2,6 +2,8 @@ package com.example.springboot.controller;
 
 import com.example.springboot.entity.User;
 import com.example.springboot.service.UserService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.Authorization;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,7 @@ public class UserController {
      */
     @CrossOrigin
     @RequestMapping(value = "/getAllUser", method = RequestMethod.GET)
+//    @ApiOperation(value = "", authorizations = { @Authorization(value="jwtToken") })
     public ResponseEntity<List<User>> getALLUser() {
         log.debug("---------------REST request to getAllUser--------------------");
         return new ResponseEntity<List<User>>(userService.getAllUsers(), HttpStatus.OK);
