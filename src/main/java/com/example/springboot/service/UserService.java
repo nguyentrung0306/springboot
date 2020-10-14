@@ -23,4 +23,8 @@ public class UserService {
     public void deleteUserById(Integer id) {
         this.userDao.deleteById(id);
     }
+
+    public void deleteListIdUser(List<Integer> listId) {
+//        this.userDao.
+    }
 }

@@ -3,25 +3,27 @@
 
 # create and drop tables and sequences, loads import.sql
 spring:
+  application:
+    name: CTTT
   jpa:
     hibernate:
       ddl-auto: update
     ## this shows the sql actions in the terminal logs
     show-sql: true
 
-#  # Oracle settings
-#  datasource:
-#    url: jdbc:oracle:thin:@localhost:1521:xe
-#    username: sys as sysdba
-#    password: 55555
-#    driver-class-name: oracle.jdbc.driver.OracleDriver
+  # Oracle settings
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: ctct
+    password: ctct#2020
+    driver-class-name: oracle.jdbc.driver.OracleDriver
 
-    # MySql settings
-    datasource:
-      url: jdbc:mysql://localhost:3306/mydatabase
-      username:
-      password:
-      driver-class-name: com.mysql.jdbc.Driver
+#    # MySql settings
+#    datasource:
+#      url: jdbc:mysql://localhost:3306/mydatabase
+#      username:
+#      password:
+#      driver-class-name: com.mysql.jdbc.Driver
 
 ##optional, but just in case another application is listening on your default  port (8080)
 server:

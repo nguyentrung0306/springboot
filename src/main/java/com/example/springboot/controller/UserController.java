@@ -42,6 +42,7 @@ public class UserController {
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public User addUser(@RequestBody User user) {
         log.debug("---------------REST request to addUser--------------------");
+        user.setAddress("aa");
         return this.userService.addUser(user);
     }
 
