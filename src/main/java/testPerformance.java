@@ -1,17 +1,26 @@
+import com.example.springboot.DAO.UserDAO;
+import com.example.springboot.entity.User;
 import lombok.SneakyThrows;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class testPerformance {
+//    @Autowired
+//    UserDAO userDao;
+
     @SneakyThrows
     public static void main(String[] args) {
         Connection con = getDatabaseConnection();
         System.out.println("con is:  " + con);
 //        writeWithCompileQuery(10);
 //        writeInABatchWithCompiledQuery(1000000);
-
-        writeInABatchWithCompiledQuery(10);
+        testPerformance ts = new testPerformance();
+        ts.getAllUser();
+//        writeInABatchWithCompiledQuery(10);
         con.close();
 
 
@@ -124,5 +133,17 @@ public class testPerformance {
         return con;
     }
 
+    public  List<User> getAllUser() throws SQLException {
+        long start = System.currentTimeMillis();
+        List<User> lst = new ArrayList<User>();
+        Connection connection = getDatabaseConnection();
+        PreparedStatement preparedStatement;
+        String compiledQuery = "select ut.id, ut.user_name, ut.email, ut.address, ut.age from user_table ut";
+        preparedStatement = connection.prepareStatement(compiledQuery);
+        preparedStatement.execute(compiledQuery);
+        long end = System.currentTimeMillis();
+        System.out.println("AAAA" + (end - start) + "ms");
+        return lst;
+    }
 
 }
