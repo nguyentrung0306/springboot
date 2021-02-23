@@ -26,7 +26,7 @@ public class UserController {
     /**
      * @return list User
      */
-    @CrossOrigin
+//    @CrossOrigin
     @RequestMapping(value = "/getAllUser", method = RequestMethod.GET)
 //    @ApiOperation(value = "", authorizations = { @Authorization(value="jwtToken") })
     public ResponseEntity<List<User>> getALLUser() {
