@@ -20,9 +20,10 @@ public class DemoApplication {
 
 
 	public static void main(String[] args) {
-		SpringApplication app = new SpringApplication(DemoApplication.class);
-		Environment env = app.run(args).getEnvironment();
-		logInfo(env);
+		SpringApplication.run(DemoApplication.class, args);
+//		SpringApplication app = new SpringApplication(DemoApplication.class);
+//		Environment env = app.run(args).getEnvironment();
+//		logInfo(env);
 	}
 
 	public static void logInfo(Environment env) {
