@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ${APPLICATION_NAME:springboot}
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER_URL:http://localhost:8888}
+      fail-fast: true
+      enabled: true
+      label: master
